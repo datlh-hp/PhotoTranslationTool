@@ -155,7 +155,7 @@ namespace PhotoTranslationTool
                 this.Dispatcher.Invoke(() =>
                 {
                     bool isVisible = this.IsVisible;
-                    if (!isVisible)
+                    if (!isVisible || this.WindowState == WindowState.Minimized || !this.IsActive)
                     {
                         // Nếu cửa sổ đang ẩn, hiển thị nó
                         this.Show();

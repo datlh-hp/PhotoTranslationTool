@@ -23,8 +23,8 @@ public class GlobalHotkey
         RegisterHotKey(
             handle,
             HOTKEY_ID,
-            MOD_CONTROL | MOD_SHIFT | MOD_ALT,  // Ctrl + Shift + Alt
-            (uint)System.Windows.Input.KeyInterop.VirtualKeyFromKey(System.Windows.Input.Key.Z) // Z
+            MOD_CONTROL | MOD_ALT,  // Ctrl + Shift + Alt
+            (uint)System.Windows.Input.KeyInterop.VirtualKeyFromKey(System.Windows.Input.Key.Space) // Z
         );
     }
 
