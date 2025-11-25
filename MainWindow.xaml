@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
-        Title="Translation Tool" Height="600" Width="495"
+        Title="Translation Tool" Height="600" Width="566"
         GlowBrush="{DynamicResource AccentColorBrush}"
         Background="{DynamicResource MahApps.Brushes.ThemeBackground}"
         Foreground="{DynamicResource MahApps.Brushes.Text}"
@@ -29,6 +29,7 @@
                             <ComboBoxItem Content="中文 (zh)" Tag="zh"/>
                         </ComboBox>
                     </Border>
+                    <Button Content="Simple" Width="61" FontSize="12" Margin="5" BorderBrush="#CC6459DF" Click="ChangeStyleButton_Click"/>
                 </StackPanel>
             </DockPanel>
         </Border>
@@ -74,7 +75,7 @@
                     <TextBox x:Name="TranslatedTextBox" TextWrapping="Wrap" AcceptsReturn="True"
                              VerticalScrollBarVisibility="Auto" FontSize="15" Padding="8"
                              Background="{DynamicResource MahApps.Brushes.TextBoxBackgroundBrush}"
-                             Foreground="White"/>
+                             Foreground="White" IsReadOnly="True"/>
                 </GroupBox>
             </Grid>
         </Grid>

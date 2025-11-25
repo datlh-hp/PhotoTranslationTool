@@ -20,6 +20,8 @@ namespace PhotoTranslationTool
     {
 
         private const string _tessdataLanguage = "eng+kor";
+        private SmallWindow? _smallWindow;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -138,6 +140,19 @@ namespace PhotoTranslationTool
             }
         }
 
+        private void ChangeStyleButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (_smallWindow == null)
+            {
+                _smallWindow = new SmallWindow();
+            }
+            _smallWindow.Owner = this;
+            var selectedItem = (ComboBoxItem)LangComboBox.SelectedItem;
+            _smallWindow._targetLang = selectedItem.Tag.ToString() ;
+            this.Hide();
+            _smallWindow.ShowDialog();
+        }
+
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             e.Cancel = true; // hủy việc đóng
@@ -149,7 +164,7 @@ namespace PhotoTranslationTool
 
         private IntPtr HwndHook(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
-            if (GlobalHotkey.HandleHotkey(hwnd, msg, wParam, lParam))
+            if (GlobalHotkey.HandleHotkey(hwnd, msg, wParam, lParam) && ( _smallWindow == null || (_smallWindow != null && !_smallWindow.IsVisible)))
             {
 
                 this.Dispatcher.Invoke(() =>
@@ -177,7 +192,7 @@ namespace PhotoTranslationTool
             return IntPtr.Zero;
         }
 
-        private async void Translate()
+        public async void Translate()
         {
             try
             {
@@ -269,8 +284,8 @@ namespace PhotoTranslationTool
             return page.GetText();
         }
 
-        #endregion Private Methods
 
+        #endregion Private Methods
 
     }
 }
