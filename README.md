@@ -1,22 +1,27 @@
 # PhotoTranslationTool
 
 📸 PhotoTranslationTool
-PhotoTranslationTool là một ứng dụng WPF (Windows Presentation Foundation) giúp bạn dịch văn bản từ hình ảnh một cách nhanh chóng và tiện lợi. Ứng dụng kết hợp OCR (Tesseract) để nhận diện chữ trong ảnh và Google Translate (qua GTranslate) để dịch sang ngôn ngữ mong muốn.
-👉 Hiện tại ứng dụng hỗ trợ OCR cho tiếng Anh (English) và tiếng Hàn (Korean).
+PhotoTranslationTool is a WPF (Windows Presentation Foundation) application that helps you translate text from images quickly and conveniently. It combines OCR (Tesseract) to recognize text in images and Google Translate (via GTranslate) to translate into your desired language.
+👉 Currently, the application supports OCR for English and Korean.
 
-✨ Tính năng chính
-- 🖼️ OCR từ ảnh: Nhận diện văn bản từ ảnh (jpg, png, bmp) hoặc clipboard.
-- 🌐 Dịch tự động: Dịch văn bản sang nhiều ngôn ngữ với Google Translate.
-- 📋 Clipboard hỗ trợ: Dán ảnh hoặc text trực tiếp từ clipboard để dịch ngay.
-- 🖱️ Drag & Drop: Kéo thả ảnh vào cửa sổ để OCR nhanh chóng.
-- 🎛️ Hotkey toàn cục: Tùy chỉnh phím tắt để mở/ẩn app hoặc paste từ clipboard.
-- 🖥️ Tray icon: Chạy ngầm dưới system tray, double click để mở lại.
-- ⚙️ Khởi động cùng Windows: Tùy chọn bật/tắt auto-start khi máy khởi động.
-- 🎨 UI hiện đại: Giao diện Metro bo tròn góc, hỗ trợ dark/light theme.
+✨ Key Features
+- 🖼️ OCR from images: Recognize text from images (jpg, png, bmp) or directly from the clipboard.
+- 🌐 Automatic translation: Translate recognized text into multiple languages using Google Translate.
+- 📋 Clipboard support: Paste images or text directly from the clipboard for instant translation.
+- 🖱️ Drag & Drop: Drag and drop images into the window for quick OCR.
+- 🎛️ Global hotkey: Customize a system-wide hotkey to show/hide the app or paste from clipboard.
+- 🖥️ Tray icon: Runs in the system tray, double-click to reopen the app.
 
-🛠️ Công nghệ sử dụng
-- WPF + MahApps.Metro → UI hiện đại, dễ dùng.
-- Tesseract OCR → Nhận diện văn bản từ ảnh (hiện hỗ trợ tiếng Anh và tiếng Hàn).
-- GTranslate (GoogleTranslator) → Dịch văn bản sang nhiều ngôn ngữ.
-- Hardcodet.Wpf.TaskbarNotification → Quản lý icon tray.
-- GlobalHotkey (Win32 API) → Đăng ký và xử lý hotkey toàn cục.
+🚀 How to Use
+- Select an image using the Select Image button or drag & drop it into the app.
+- The app will automatically perform OCR and display the text in the OCR Text box.
+- Choose your target language from the LangComboBox.
+- Click Translate to translate the text.
+- Use Ctrl+V to paste images/text from the clipboard or trigger the global hotkey to open the app instantly.
+
+🛠️ Technologies Used
+- WPF + MahApps.Metro → Modern, user-friendly UI.
+- Tesseract OCR → Text recognition from images (currently supports English and Korean).
+- GTranslate (GoogleTranslator) → Translate text into multiple languages.
+- Hardcodet.Wpf.TaskbarNotification → System tray icon management.
+- GlobalHotkey (Win32 API) → Register and handle global hotkeys.
